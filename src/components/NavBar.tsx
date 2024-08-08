@@ -8,19 +8,19 @@ type Props = {
 
 const NavBar: React.FC<Props> = ({ onScrollToHome, onScrollToPortfolio, onScrollToContact }) => {
     return (
-        <nav>
-            <ul style={{ display: 'flex', justifyContent: 'space-between', gap: '20px', listStyleType: 'none', padding:'0', margin: '0' }}>
+        <nav style={{ display: 'flex', justifyContent: 'space-between', height: '80px', backgroundColor: 'gray', alignItems: 'center', padding: '0 20px', cursor: 'pointer' }}>
+            <ul style={{ display: 'flex', gap: '20px', listStyleType: 'none', padding:'0', margin: '0' }}>
                 <li>
-                    <button onClick={onScrollToHome}>Home</button>
+                    <div onClick={onScrollToHome} style={{fontSize: '50px'}}>Home</div>
                 </li>
-                <div style={{ display: 'flex', gap: '20px'}}>
-                    <li>
-                        <button onClick={onScrollToPortfolio}>Portfolio</button>
-                    </li>
-                    <li>
-                        <button onClick={onScrollToContact}>Contact</button>
-                    </li>
-                </div>
+            </ul>
+            <ul style={{ display: 'flex', listStyleType: 'none', gap: '20px', fontSize: '30px'}}>
+                <li>
+                    <div onClick={onScrollToPortfolio}>Portfolio</div>
+                </li>
+                <li>
+                    <div onClick={onScrollToContact}>Contact</div>
+                </li>
             </ul>
         </nav>
     );

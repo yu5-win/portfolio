@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './NavBar.module.css';
 
 type Props = {
     onScrollToHome: () => void;
@@ -8,22 +9,28 @@ type Props = {
 
 const NavBar: React.FC<Props> = ({ onScrollToHome, onScrollToPortfolio, onScrollToContact }) => {
     return (
-        <nav style={{ display: 'flex', justifyContent: 'space-between', height: '80px', backgroundColor: 'gray', alignItems: 'center', padding: '0 20px', cursor: 'pointer' }}>
-            <ul style={{ display: 'flex', gap: '20px', listStyleType: 'none', padding:'0', margin: '0' }}>
-                <li>
-                    <div onClick={onScrollToHome} style={{fontSize: '50px'}}>Home</div>
-                </li>
-            </ul>
-            <ul style={{ display: 'flex', listStyleType: 'none', gap: '20px', fontSize: '30px'}}>
-                <li>
-                    <div onClick={onScrollToPortfolio}>Portfolio</div>
-                </li>
-                <li>
-                    <div onClick={onScrollToContact}>Contact</div>
-                </li>
-            </ul>
-        </nav>
+      <nav className={styles.nav}>
+        <ul className={`${styles.navList} ${styles.navItemL}`}>
+          <li>
+            <div onClick={onScrollToHome}>
+              KYS's Portfolio
+            </div>
+          </li>
+        </ul>
+        <ul className={`${styles.navList} ${styles.navItemR}`}>
+          <li>
+            <div onClick={onScrollToPortfolio}>
+              Portfolio
+            </div>
+          </li>
+          <li>
+            <div onClick={onScrollToContact}>
+              Contact
+            </div>
+          </li>
+        </ul>
+      </nav>
     );
-};
+  };
 
 export default NavBar;

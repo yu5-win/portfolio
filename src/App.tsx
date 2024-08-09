@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import NavBar from './components/NavBar';
+import './App.css';
 
 const App: React.FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -11,29 +12,31 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <NavBar 
         onScrollToHome={() => scrollToSection(homeRef)}
         onScrollToPortfolio={() => scrollToSection(portfolioRef)}
         onScrollToContact={() => scrollToSection(contactRef)}
       />
+      <div className="content">
+        <div ref={homeRef} className='home'>
+          
+        </div>
+        
+        <div ref={portfolioRef} style={{height: '500px'}}>
+          <h2>Portfolio Section</h2>
+          <p>Content for the Portfolio section.</p>
+        </div>
 
-      <div ref={homeRef} style={{ height: '100vh', backgroundColor: '#f8f9fa' }}>
-        <h2>Home Section</h2>
-        <p>Content for the Home section.</p>
-      </div>
-      
-      <div ref={portfolioRef} style={{ height: '100vh', backgroundColor: '#e9ecef' }}>
-        <h2>Portfolio Section</h2>
-        <p>Content for the Portfolio section.</p>
-      </div>
-
-      <div ref={contactRef} style={{ height: '100vh', backgroundColor: '#dee2e6' }}>
-        <h2>Contact Section</h2>
-        <p>Content for the Contact section.</p>
+        <div ref={contactRef}>
+          <h2>Contact Section</h2>
+          <p>Content for the Contact section.</p>
+        </div>
       </div>
     </div>
   )
 }
 
 export default App;
+
+// #005ad5 (포인트 컬러로 사용)

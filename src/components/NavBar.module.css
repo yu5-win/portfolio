@@ -1,0 +1,32 @@
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 7vh;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: #ecbd47;
+  }
+  
+  .navList {
+    display: flex;
+    margin: 30vh 30vh;
+    list-style-type: none;
+    cursor: pointer;
+    color: #fbeccb;
+    font-weight: bold;
+  }
+  
+  .navItemL {
+    flex: 1;
+    justify-content: start;
+    font-size: 30px;
+  }
+  .navItemR {
+    flex: 1;
+    justify-content: end;
+    font-size: 20px;
+    gap: 20px;
+  }

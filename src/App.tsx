@@ -1,11 +1,28 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import './App.css';
 
 const App: React.FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
-  const portfolioRef = useRef<HTMLDivElement>(null);
+  const profileRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  const [isNavBarAtProfile, setIsNavBarAtProfile] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const profileSection = profileRef.current?.getBoundingClientRect();
+      if(profileSection){
+        const isAtProfile = profileSection.top <= 60 && profileSection.bottom >= 60;
+        setIsNavBarAtProfile(isAtProfile);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -14,8 +31,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <NavBar 
+        isNavBarAtProfile={isNavBarAtProfile}
         onScrollToHome={() => scrollToSection(homeRef)}
-        onScrollToPortfolio={() => scrollToSection(portfolioRef)}
+        onScrollToProfile={() => scrollToSection(profileRef)}
         onScrollToContact={() => scrollToSection(contactRef)}
       />
       <div className="content">
@@ -23,12 +41,12 @@ const App: React.FC = () => {
           
         </div>
         
-        <div ref={portfolioRef} style={{height: '500px'}}>
-          <h2>Portfolio Section</h2>
+        <div ref={profileRef} style={{height: '500px'}}>
+          <h2>Profile Section</h2>
           <p>Content for the Portfolio section.</p>
         </div>
 
-        <div ref={contactRef}>
+        <div ref={contactRef} style={{height: '500px'}}>
           <h2>Contact Section</h2>
           <p>Content for the Contact section.</p>
         </div>

@@ -1,0 +1,51 @@
+@import './Variables.css';
+
+.home{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+.titleContainer {
+    position: relative;
+}
+.title {
+    font-family: 'Georgia', serif;
+    width: 120vh;
+    font-weight: bold;
+    color: var(--sub-color);
+    font-size: 160px;
+    position: absolute; /* 위치를 절대적으로 설정 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* z-index로 다른 요소보다 위에 배치 */
+}
+.subTitle {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-weight: bold;
+    color: #fbeccb6c;
+    font-size: 320px;
+    position: absolute; /* 위치를 절대적으로 설정 */
+    top: 50%; /* 위치를 조정 */
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙에 위치시키기 위한 조정 */
+    z-index: 0;
+}
+
+.scroll {
+    position: absolute;
+    bottom: -210px;
+    left: 0;
+    right: 0;
+    font-size: 10px;
+    color: #838383;
+    cursor: pointer;
+}

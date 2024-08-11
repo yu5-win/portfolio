@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
+import Home from './components/Home';
 import './App.css';
+
 
 const App: React.FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -36,25 +38,21 @@ const App: React.FC = () => {
         onScrollToProfile={() => scrollToSection(profileRef)}
         onScrollToContact={() => scrollToSection(contactRef)}
       />
-      <div className="content">
-        <div ref={homeRef} className='home'>
-          
-        </div>
+      <div ref={homeRef}>
+        <Home profileRef={profileRef} />
+      </div>
         
-        <div ref={profileRef} style={{height: '500px'}}>
-          <h2>Profile Section</h2>
-          <p>Content for the Portfolio section.</p>
-        </div>
+      <div ref={profileRef} style={{ paddingTop:'60px', height: '500px'}}>
+        <h2>Profile Section</h2>
+        <p>Content for the Portfolio section.</p>
+      </div>
 
-        <div ref={contactRef} style={{height: '500px'}}>
-          <h2>Contact Section</h2>
-          <p>Content for the Contact section.</p>
-        </div>
+      <div ref={contactRef} style={{height: '500px'}}>
+        <h2>Contact Section</h2>
+        <p>Content for the Contact section.</p>
       </div>
     </div>
   )
 }
 
 export default App;
-
-// #005ad5 (포인트 컬러로 사용)

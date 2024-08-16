@@ -2,50 +2,73 @@
 
 .home{
     display: flex;
-    position: relative;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    height: 100vh;
+    height: 6000vh;
     background-color: var(--main-color);
 }
 
 .titleContainer {
-    position: relative;
+    position: fixed;
+    margin-top: 7vh;
+    width: 90vw;
+    height: 85vh;
+    border: 2px solid rgba(4, 0, 77, 0);
+    transition: border-color 0.3s;
+    text-align: center;
 }
 .title {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    margin-top: 15vh;
     font-family: 'Georgia', serif;
-    width: 120vh;
     font-weight: bold;
     color: var(--sub-color);
-    font-size: 160px;
-    position: absolute; /* 위치를 절대적으로 설정 */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: 12vw;
+    
     z-index: 1; /* z-index로 다른 요소보다 위에 배치 */
 }
+.title2 {
+    font-size: 1.3vw;
+    letter-spacing: 0.5vw;
+    color: rgba(94, 161, 255, 1);
+}
 .subTitle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     font-weight: bold;
-    color: #fbeccb6c;
-    font-size: 320px;
-    position: absolute; /* 위치를 절대적으로 설정 */
-    top: 50%; /* 위치를 조정 */
-    left: 50%;
-    transform: translate(-50%, -50%); /* 중앙에 위치시키기 위한 조정 */
+    color: rgba(251, 236, 182, 0.43);
+    font-size: 18vw;
     z-index: 0;
 }
 
-.scroll {
+.aboutTitle{
     position: absolute;
-    bottom: -210px;
-    left: 0;
-    right: 0;
-    font-size: 10px;
-    color: #838383;
-    cursor: pointer;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 6vw;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: var(--sub-color);
+}
+.aboutTitle2{
+    position: absolute;
+    width: 100vw;
+    left: 50%;
+    bottom: 2%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    font-weight: bold;
+    line-height: 70px;
+    letter-spacing: 10px;
+    color: var(--sub-color);
 }

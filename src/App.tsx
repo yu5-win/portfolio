@@ -32,14 +32,14 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <NavBar 
+      {/* <NavBar 
         isNavBarAtProfile={isNavBarAtProfile}
         onScrollToHome={() => scrollToSection(homeRef)}
         onScrollToProfile={() => scrollToSection(profileRef)}
         onScrollToContact={() => scrollToSection(contactRef)}
-      />
+      /> */}
       <div ref={homeRef}>
-        <Home profileRef={profileRef} />
+        <Home />
       </div>
         
       <div ref={profileRef} style={{ paddingTop:'60px', height: '500px'}}>
